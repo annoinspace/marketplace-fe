@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import { Card } from "react-bootstrap"
 
 function ProductList() {
   const [products, setProducts] = useState([])
@@ -22,7 +23,14 @@ function ProductList() {
       <h1>Product List</h1>
       <ul>
         {products.map((product) => (
-          <li key={product.id}>{product.name}</li>
+          <Card style={{ width: "18rem" }}>
+            {product.imageUrl && <Card.Img variant="top" src={product.imageUrl} />}
+
+            <Card.Body>
+              <Card.Title>{product.name}</Card.Title>
+              <Card.Text>{product.description}</Card.Text>
+            </Card.Body>
+          </Card>
         ))}
       </ul>
     </div>
