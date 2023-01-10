@@ -23,7 +23,7 @@ function ProductList() {
       <h1>Product List</h1>
       <ul>
         {products.map((product) => (
-          <Card style={{ width: "18rem" }}>
+          <Card key={product._id} style={{ width: "18rem" }}>
             {product.imageUrl && <Card.Img variant="top" src={product.imageUrl} />}
 
             <Card.Body>
